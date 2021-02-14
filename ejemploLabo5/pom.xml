@@ -8,10 +8,10 @@
 		<version>2.2.7.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.uca.capas</groupId>
-	<artifactId>ejemploLabo5</artifactId>
+	<groupId>com.Prueba.Wood</groupId>
+	<artifactId>Wood</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ejemploLabo5</name>
+	<name>Wood</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
