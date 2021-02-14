@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Mostrando lista de usuarios</h1>
+    
+    	<table>
+		<thead>
+			<th>ID</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+
+		</thead>
+		<th:block th:each="usuario, row:${usuarios}">
+			<tr>
+				<th th:text="${usuario.id_usuario}"/>
+				<th th:text="${usuario.nombre}"/>
+				<th th:text="${usuario.apellido}"/>
+
+			</tr>
+		</th:block>
+	</table>
+	
+	<form th:action="@{/index}" method="post">
+		<input type="submit" value="Regresar al index">
+	</form>
+      
+</body>
+</html>

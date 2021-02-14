@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Ingrese un usuario</h1>
+    
+    <form th:action="@{/ingresar}" method="post" th:object="${usuario}">
+		<label>Nombre</label><input id="nombre" th:field="${usuario.nombre}" name="nombre">
+		
+		<label>Apellido</label><input id="apellido" th:field="${usuario.apellido}" name="apellido">
+		
+		<input type="submit" value="Ingresar">
+	</form>
+	
+	<form th:action="@{/index}" method="post">
+		<input type="submit" value="Regresar al index">
+	</form>
+      
+</body>
+</html>
