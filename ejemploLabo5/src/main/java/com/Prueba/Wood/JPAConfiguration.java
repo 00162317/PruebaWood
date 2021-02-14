@@ -40,9 +40,14 @@ public class JPAConfiguration {
 		// TODO Auto-generated method stub
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://127.0.0.1:5432/Prueba");
-		dataSource.setUsername("postgres");
-		dataSource.setPassword("root");
+		//dataSource.setUrl("jdbc:postgresql://ec2-52-7-168-69.compute-1.amazonaws.com:5432/d6n11tskd5josq");
+		//dataSource.setUsername("ghplbdrnyecifl");
+		//dataSource.setPassword("1f395dc0746276c55dce256b099bb66871fa486e14c10badc7c4646ac43fe5dd");
+		dataSource.setUrl("jdbc:postgresql://ec2-54-162-119-125.compute-1.amazonaws.com:5432/dd5kf8be6ge9s");
+		dataSource.setUsername("sfdirgvdoyozay");
+		dataSource.setPassword("f9d1029e475645c178d712375d9be521ea7971297b8a323d385d3ba1900a0071");
+		//dataSource.setUsername("postgres");
+		//dataSource.setPassword("root");
 		return dataSource;
 	}
 	
