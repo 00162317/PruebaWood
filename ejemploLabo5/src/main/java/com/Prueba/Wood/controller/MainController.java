@@ -102,7 +102,7 @@ public class MainController {
 		
 		attributes.addFlashAttribute("message", "Archivo cargado correctamente ["+builder.toString()+"]");
 
-		return "redirect:/index";
+		return "redirect:/status";
 	}
 	
 	
