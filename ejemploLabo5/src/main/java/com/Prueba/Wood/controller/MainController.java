@@ -90,6 +90,8 @@ public class MainController {
 		StringBuilder builder = new StringBuilder();
 		builder.append(System.getProperty("user.dir"));
 		builder.append(File.separator);
+		builder.append("ejemploLabo5");
+		builder.append(File.separator);
 		builder.append(file.getOriginalFilename());
 		
 		System.out.println(builder);
