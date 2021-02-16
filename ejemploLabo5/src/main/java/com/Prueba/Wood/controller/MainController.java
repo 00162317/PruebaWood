@@ -90,6 +90,8 @@ public class MainController {
 		builder.append(System.getProperty("user.home"));
 		builder.append(File.separator);
 		builder.append(file.getOriginalFilename());
+		
+		System.out.println(builder);
 
 		byte[] fileBytes = file.getBytes();
 		Path path = Paths.get(builder.toString());
