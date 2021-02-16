@@ -87,7 +87,7 @@ public class MainController {
 		}
 
 		StringBuilder builder = new StringBuilder();
-		builder.append("/00162317/PruebaWood/tree/master/ejemploLabo5");
+		builder.append(System.getProperty("user.home"));
 		builder.append(File.separator);
 		builder.append(file.getOriginalFilename());
 
