@@ -88,7 +88,7 @@ public class MainController {
 		}
 
 		StringBuilder builder = new StringBuilder();
-		builder.append(System.getProperty("user.home"));
+		builder.append(System.getProperty("user.dir"));
 		builder.append(File.separator);
 		builder.append(file.getOriginalFilename());
 		
