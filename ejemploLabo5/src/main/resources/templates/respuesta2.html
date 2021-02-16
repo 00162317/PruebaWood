@@ -10,10 +10,12 @@
     
     <h1>Ingrese un usuario</h1>
     
-    <form th:action="@{/ingresar}" method="post" th:object="${usuario}">
+    <form th:action="@{/ingresar}" method="POST" th:object="${usuario}" enctype="multipart/form-data">
 		<label>Nombre</label><input id="nombre" th:field="${usuario.nombre}" name="nombre">
 		
-		<label>Apellido</label><input id="apellido" th:field="${usuario.apellido}" name="apellido">
+		<label>Apellido</label><input id="apellido" th:field="${usuario.apellido}" name="apellido"><br>
+		<label>Imagen a subir</label>
+		<input type="file" name="file" /><br><br>
 		
 		<input type="submit" value="Ingresar">
 	</form>
