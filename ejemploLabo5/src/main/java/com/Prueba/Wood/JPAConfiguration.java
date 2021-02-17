@@ -13,11 +13,13 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories (basePackages="com.uca.capas.tarea5.repositories")
 public class JPAConfiguration {
+
 	
 	
 	@Bean
