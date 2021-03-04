@@ -5,11 +5,15 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.InvalidAlgorithmParameterException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +23,13 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.Prueba.Wood.dao.StripeService;
 import com.Prueba.Wood.dao.UsuarioDAO;
+import com.Prueba.Wood.domain.ChargeRequest;
+import com.Prueba.Wood.domain.ChargeRequest.Currency;
 import com.Prueba.Wood.domain.Usuario;
+import com.stripe.exception.StripeException;
+import com.stripe.model.Charge;
 
 
 
@@ -42,6 +51,39 @@ public class MainController {
 		mav.setViewName("index");
 		return mav;
 	}
+	
+	//-------------------------------------------------------------------------------------------
+	
+	@RequestMapping("/form")
+	public ModelAndView form() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("form");
+		return mav;
+	}
+
+	@Autowired
+    private StripeService paymentsService;
+
+    @PostMapping("/charge")
+    public String charge(ChargeRequest chargeRequest, Model model)
+      throws StripeException, InvalidAlgorithmParameterException {
+        chargeRequest.setDescription("Example charge");
+        chargeRequest.setCurrency(Currency.EUR);
+        Charge charge = paymentsService.charge(chargeRequest);
+        model.addAttribute("id", charge.getId());
+        model.addAttribute("status", charge.getStatus());
+        model.addAttribute("chargeId", charge.getId());
+        model.addAttribute("balance_transaction", charge.getBalanceTransaction());
+        return "result";
+    }
+
+    @ExceptionHandler(StripeException.class)
+    public String handleError(Model model, StripeException ex) {
+        model.addAttribute("error", ex.getMessage());
+        return "result";
+    }
+	//-------------------------------------------------------------------------------------------
+	
 	
 	@RequestMapping("/respuesta1")
 	public ModelAndView respuesta1() {
