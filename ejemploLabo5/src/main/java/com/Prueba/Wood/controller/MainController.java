@@ -54,6 +54,11 @@ public class MainController {
 	
 	//-------------------------------------------------------------------------------------------
 	
+	//LINK VERGON
+	//https://www.baeldung.com/java-stripe-api
+	//https://github.com/stripe/elements-examples
+	//https://stripe.com/docs/stripe-js
+	
 	@RequestMapping("/form")
 	public ModelAndView form() {
 		ModelAndView mav = new ModelAndView();
