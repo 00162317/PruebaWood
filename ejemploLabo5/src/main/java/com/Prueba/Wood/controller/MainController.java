@@ -54,10 +54,14 @@ public class MainController {
 	
 	//-------------------------------------------------------------------------------------------
 	
-	//LINK VERGON
-	//https://www.baeldung.com/java-stripe-api
-	//https://github.com/stripe/elements-examples
-	//https://stripe.com/docs/stripe-js
+	/*
+	Cuenta de STRIPE: Correo: 00162317@uca.edu.sv
+	Contraseña: xiaomiroberto20-
+	
+	LINKS VERGONES
+	https://www.baeldung.com/java-stripe-api
+	https://github.com/stripe/elements-examples
+	https://stripe.com/docs/stripe-js*/
 	
 	@RequestMapping("/form")
 	public ModelAndView form() {
